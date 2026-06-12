@@ -1063,10 +1063,24 @@ h2 {
   fill: currentColor;
 }
 
+.wa-icon {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.btn:has(.wa-icon) {
+  gap: 8px;
+}
+
 .whatsapp-float {
   position: fixed;
   right: 24px;
   bottom: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--accent);
   color: var(--white);
   padding: 14px 22px;
@@ -1185,7 +1199,10 @@ h2 {
 }
 
 .sidebar-whatsapp {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   width: 100%;
   text-align: center;
   margin-top: 24px;
