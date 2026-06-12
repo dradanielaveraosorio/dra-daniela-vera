@@ -1070,6 +1070,11 @@ h2 {
   object-fit: contain;
 }
 
+.social-link-instagram .social-brand-icon {
+  width: 36px;
+  height: 36px;
+}
+
 .wa-icon {
   width: 18px;
   height: 18px;
