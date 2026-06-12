@@ -1057,10 +1057,17 @@ h2 {
   color: var(--slate);
 }
 
-.social-link svg {
+.social-link svg:not(.social-brand-icon) {
   width: 20px;
   height: 20px;
   fill: currentColor;
+}
+
+.social-brand-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
 }
 
 .wa-icon {
