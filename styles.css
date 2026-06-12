@@ -834,6 +834,7 @@ h2 {
   height: auto;
   flex-shrink: 0;
   border-radius: 8px;
+  background: transparent;
 }
 
 .credential-text strong {
