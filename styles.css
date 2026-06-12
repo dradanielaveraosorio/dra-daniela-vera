@@ -177,7 +177,25 @@ img {
   border-color: var(--accent);
 }
 
-.hero {
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-left: auto;
+}
+
+.header-socials {
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.header-socials .social-link {
+  background: var(--white);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .hero {
   position: relative;
   padding: 80px 0 72px;
   background: linear-gradient(180deg, var(--muted) 0%, var(--white) 100%);
@@ -1233,13 +1251,29 @@ h2 {
   .header-content {
     justify-content: space-between;
   }
+
+  .header-right {
+    gap: 12px;
+  }
+
+  .header-socials .social-link {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  .header-socials .social-link-instagram .social-brand-icon {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-socials {
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
-  .btn-small {
-    display: none;
-  }
-
   .hero {
     padding-top: 48px;
   }
