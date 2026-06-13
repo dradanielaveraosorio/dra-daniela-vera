@@ -578,6 +578,7 @@ h2 {
   margin: 0;
   line-height: 1.5;
   color: var(--accent-dark);
+  font-weight: 700;
 }
 
 .promo-card-price {
