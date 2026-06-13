@@ -187,19 +187,65 @@ img {
 .hero::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -20%;
   background-image: var(--tooth-tile);
   background-size: var(--tooth-tile-size);
   background-repeat: repeat;
   background-position: 0 0;
-  opacity: 0.2;
+  opacity: 0.18;
   pointer-events: none;
   z-index: 0;
-  animation: tooth-drift 24s ease-in-out infinite;
+  transform: rotate(-10deg);
+  transform-origin: center;
+  animation: tooth-drift-a 22s ease-in-out infinite;
 }
 
 .hero::after {
-  content: none;
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background-image: var(--tooth-tile);
+  background-size: 320px;
+  background-repeat: repeat;
+  background-position: 40px 20px;
+  opacity: 0.14;
+  pointer-events: none;
+  z-index: 0;
+  transform: rotate(22deg);
+  transform-origin: center;
+  animation: tooth-drift-b 17s ease-in-out infinite reverse;
+}
+
+.hero-teeth {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-teeth-layer {
+  position: absolute;
+  inset: -30%;
+  background-image: var(--tooth-tile);
+  background-repeat: repeat;
+  transform-origin: center;
+}
+
+.hero-teeth-layer--one {
+  background-size: 360px;
+  background-position: 20px 40px;
+  opacity: 0.15;
+  transform: rotate(14deg);
+  animation: tooth-drift-c 26s ease-in-out infinite;
+}
+
+.hero-teeth-layer--two {
+  background-size: 260px;
+  background-position: -30px 10px;
+  opacity: 0.12;
+  transform: rotate(-32deg);
+  animation: tooth-drift-d 19s ease-in-out infinite reverse;
 }
 
 .hero .container {
@@ -1408,19 +1454,73 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero::before {
+  .hero::before,
+  .hero::after,
+  .hero-teeth-layer {
     animation: none;
   }
 }
 
-@keyframes tooth-drift {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 80px 60px;
-  }
+@keyframes tooth-drift-a {
+  0%,
   100% {
     background-position: 0 0;
+    transform: rotate(-10deg) translate(0, 0);
+  }
+  25% {
+    background-position: 160px 70px;
+    transform: rotate(-6deg) translate(18px, -12px);
+  }
+  50% {
+    background-position: 90px 160px;
+    transform: rotate(-14deg) translate(-14px, 20px);
+  }
+  75% {
+    background-position: -50px 90px;
+    transform: rotate(-8deg) translate(10px, 8px);
+  }
+}
+
+@keyframes tooth-drift-b {
+  0%,
+  100% {
+    background-position: 40px 20px;
+    transform: rotate(22deg) translate(0, 0);
+  }
+  33% {
+    background-position: -80px 130px;
+    transform: rotate(28deg) translate(-16px, 14px);
+  }
+  66% {
+    background-position: 150px -40px;
+    transform: rotate(16deg) translate(12px, -18px);
+  }
+}
+
+@keyframes tooth-drift-c {
+  0%,
+  100% {
+    background-position: 20px 40px;
+    transform: rotate(14deg) scale(1);
+  }
+  50% {
+    background-position: 180px 120px;
+    transform: rotate(20deg) scale(1.04);
+  }
+}
+
+@keyframes tooth-drift-d {
+  0%,
+  100% {
+    background-position: -30px 10px;
+    transform: rotate(-32deg) translate(0, 0);
+  }
+  40% {
+    background-position: 120px -60px;
+    transform: rotate(-26deg) translate(20px, 10px);
+  }
+  80% {
+    background-position: -90px 150px;
+    transform: rotate(-38deg) translate(-12px, -16px);
   }
 }
