@@ -809,6 +809,18 @@ h2 {
   align-items: start;
 }
 
+.about-image {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-image .credential {
+  margin-top: 0;
+  background: var(--white);
+  box-shadow: 0 2px 8px rgba(17, 32, 43, 0.04);
+}
+
 .about-intro {
   color: var(--slate);
   margin-bottom: 28px;
