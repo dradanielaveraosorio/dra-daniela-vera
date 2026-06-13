@@ -1,36 +1,3 @@
-// Reemplaza con tu enlace real de Calendly si es distinto.
-const CALENDLY_URL = "https://calendly.com/dra-danielaverao";
-
-function openCalendlyPopup() {
-  if (window.Calendly) {
-    Calendly.initPopupWidget({ url: CALENDLY_URL });
-    return;
-  }
-
-  window.open(CALENDLY_URL, "_blank", "noopener,noreferrer");
-}
-
-function initCalendly() {
-  document.querySelectorAll(".calendly-inline-widget").forEach((widget) => {
-    if (!widget.dataset.url) {
-      widget.dataset.url = CALENDLY_URL;
-    }
-  });
-
-  document.querySelectorAll(".calendly-btn").forEach((btn) => {
-    btn.addEventListener("click", (event) => {
-      event.preventDefault();
-      openCalendlyPopup();
-    });
-  });
-}
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initCalendly);
-} else {
-  initCalendly();
-}
-
 const navLinks = document.querySelectorAll(".nav-links a");
 
 navLinks.forEach((link) => {
