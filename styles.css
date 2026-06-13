@@ -536,6 +536,16 @@ h2 {
   color: var(--ink);
 }
 
+.home-gallery {
+  margin-top: 56px;
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.home-gallery .section-header {
+  max-width: none;
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
