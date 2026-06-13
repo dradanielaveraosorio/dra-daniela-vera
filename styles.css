@@ -552,9 +552,31 @@ h2 {
 }
 
 .promos-block {
+  position: relative;
+  overflow: hidden;
   margin-top: 40px;
-  padding-top: 48px;
+  padding: 48px 24px 32px;
   border-top: 1px solid var(--line);
+}
+
+.promos-block::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background-image: var(--tooth-tile);
+  background-size: var(--tooth-tile-size);
+  background-repeat: repeat;
+  background-position: 0 0;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: center;
+  animation: tooth-drift 18s ease-in-out infinite;
+}
+
+.promos-block > * {
+  position: relative;
+  z-index: 1;
 }
 
 .promos-grid {
@@ -1409,7 +1431,8 @@ h2 {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero::before {
+  .hero::before,
+  .promos-block::before {
     animation: none;
   }
 }
