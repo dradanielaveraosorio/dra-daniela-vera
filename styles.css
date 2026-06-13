@@ -550,85 +550,59 @@ h2 {
   padding-top: 0;
 }
 
-.promos-box {
+.promos-block {
   margin-top: 40px;
-  padding: 28px 26px;
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
+  padding-top: 48px;
+  border-top: 1px solid var(--line);
 }
 
-.promos-box-header {
-  margin-bottom: 20px;
+.promos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
 }
 
-.promos-box-header h2 {
-  margin: 0;
-  font-size: 1.5rem;
-}
-
-.promos-badge {
-  display: inline-block;
-  margin-bottom: 10px;
-  padding: 5px 14px;
-  border-radius: 999px;
-  background: var(--accent);
-  color: var(--white);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.promos-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  counter-reset: promo;
-}
-
-.promos-list li {
+.promo-card {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 8px 12px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--ink);
-  font-size: 0.98rem;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--white);
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  font-weight: 500;
+  color: var(--slate);
+}
+
+.promo-card-text {
+  margin: 0;
   line-height: 1.5;
 }
 
-.promos-list li::before {
-  counter-increment: promo;
-  content: counter(promo) ")";
-  flex-shrink: 0;
-  min-width: 1.5rem;
+.promo-card-price {
+  margin: auto 0 0;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--accent-dark);
 }
 
-.promos-list li:last-child {
-  border-bottom: none;
+.promo-card-prices {
+  margin-top: auto;
 }
 
-.promo-text {
-  flex: 1 1 220px;
-  color: var(--slate);
+.promo-card-prices p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.promo-price-inline {
-  margin: 0 4px;
-  font-size: 1.05rem;
+.promo-card-prices strong {
   font-weight: 700;
   color: var(--accent-dark);
 }
 
 .promos-footer {
-  margin: 20px 0 0;
-  padding-top: 16px;
-  border-top: 1px solid var(--line);
+  margin: 24px 0 0;
   color: var(--slate);
   font-size: 0.98rem;
   line-height: 1.6;
@@ -637,7 +611,7 @@ h2 {
 
 .promos-action {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 22px;
 }
 
@@ -1383,10 +1357,6 @@ h2 {
 @media (max-width: 600px) {
   .btn-small {
     display: none;
-  }
-
-  .promos-box {
-    padding: 22px 18px;
   }
 
   .promos-action .btn {
