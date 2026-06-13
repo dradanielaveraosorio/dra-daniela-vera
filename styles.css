@@ -195,6 +195,7 @@ img {
   opacity: 0.2;
   pointer-events: none;
   z-index: 0;
+  animation: tooth-drift 24s ease-in-out infinite;
 }
 
 .hero::after {
@@ -1301,6 +1302,12 @@ h2 {
     right: 16px;
     left: 16px;
     text-align: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::before {
+    animation: none;
   }
 }
 
