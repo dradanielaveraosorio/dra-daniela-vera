@@ -372,13 +372,27 @@ h2 {
 #tratamientos::before,
 #horario::before,
 #metodos-pago::before,
-#contacto::before,
 #sobre-mi::after,
 #tratamientos::after,
 #horario::after,
 #metodos-pago::after,
 #contacto::after {
   content: none;
+}
+
+#contacto::before {
+  content: "";
+  position: absolute;
+  inset: -18%;
+  background-image: var(--tooth-tile);
+  background-size: var(--tooth-tile-size);
+  background-repeat: repeat;
+  background-position: 0 0;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+  transform-origin: center;
+  animation: tooth-drift 18s ease-in-out infinite;
 }
 
 #sobre-mi > .container,
@@ -1444,7 +1458,8 @@ h2 {
 
 @media (prefers-reduced-motion: reduce) {
   .hero::before,
-  .promos-block::before {
+  .promos-block::before,
+  #contacto::before {
     animation: none;
   }
 }
